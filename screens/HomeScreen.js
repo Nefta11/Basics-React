@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet,Alert } from 'react-native';
 import { useStudents } from './StudentContext';
 
 const HomeScreen = ({ navigation }) => {
@@ -11,14 +11,30 @@ const HomeScreen = ({ navigation }) => {
   const [promedio, setPromedio] = useState('');
 
   const handleSave = () => {
-    const newStudent = { matricula, nombre, apellidos, grado, promedio };
-    setStudents([...students, newStudent]);
-    setMatricula('');
-    setNombre('');
-    setApellidos('');
-    setGrado('');
-    setPromedio('');
+    if (!matricula || !nombre || !apellidos || !grado || !promedio) {
+      Alert.alert(
+        "Campos vacíos",
+        "No se puede enviar vacío los campos.",
+        [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+        { cancelable: false }
+      );
+    } else {
+      const newStudent = { matricula, nombre, apellidos, grado, promedio };
+      setStudents([...students, newStudent]);
+      setMatricula('');
+      setNombre('');
+      setApellidos('');
+      setGrado('');
+      setPromedio('');
+      Alert.alert(
+        "Guardado exitosamente",
+        "El estudiante ha sido guardado.",
+        [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+        { cancelable: false }
+      );
+    }
   };
+  
 
   return (
     <View style={styles.container}>
