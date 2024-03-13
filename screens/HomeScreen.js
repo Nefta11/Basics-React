@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
     if (!matricula || !nombre || !apellidos || !grado || !promedio) {
       Alert.alert(
         "Campos vacíos",
-        "No se puede enviar vacío los campos.",
+        "No se puede enviar vacíos los campos.",
         [{ text: "OK", onPress: () => console.log("OK Pressed") }],
         { cancelable: false }
       );
