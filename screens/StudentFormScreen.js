@@ -45,6 +45,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   card: {
+    marginTop:20,
+    marginLeft:25,
     backgroundColor: "#cb3234",
     width: "80%",
     borderRadius: 10,
