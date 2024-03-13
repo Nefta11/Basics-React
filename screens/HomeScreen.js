@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { useStudents } from './StudentContext';
 
 const HomeScreen = ({ navigation }) => {
-  const [students, setStudents] = useState([]);
+  const { students, setStudents } = useStudents();
   const [matricula, setMatricula] = useState('');
   const [nombre, setNombre] = useState('');
   const [apellidos, setApellidos] = useState('');
@@ -22,7 +23,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Button title='Ver Estudiantes' onPress={() => navigation.navigate('StudentFormScreen', { students })} />
+        <Button title='Ver Estudiantes' onPress={() => navigation.navigate('StudentFormScreen')} />
       </View>
       <View style={styles.body}>
         <Text style={styles.title}>Inserte un Estudiante</Text>
@@ -36,6 +37,7 @@ const HomeScreen = ({ navigation }) => {
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {

@@ -1,13 +1,20 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, FlatList } from 'react-native';
+import { View, Text, Button, StyleSheet, FlatList, Alert } from 'react-native';
+import { useStudents } from './StudentContext';
 
-const StudentFormScreen = ({ route, navigation }) => {
-  const { students } = route.params;
+const StudentFormScreen = ({ navigation }) => {
+  const { students, setStudents } = useStudents();
 
   const handleDelete = (index) => {
     const newStudents = [...students];
     newStudents.splice(index, 1);
     setStudents(newStudents);
+    Alert.alert(
+      "Eliminado exitosamente",
+      "El estudiante ha sido eliminado.",
+      [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+      { cancelable: false }
+    );
   };
 
   const handleEdit = (student, index) => {
@@ -36,6 +43,9 @@ const StudentFormScreen = ({ route, navigation }) => {
     </View>
   );
 };
+
+// ... tus estilos y exportación del componente
+
 
 const styles = StyleSheet.create({
   container: {
