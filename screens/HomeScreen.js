@@ -3,14 +3,19 @@ import { View, Text, TextInput, Button, StyleSheet,Alert } from 'react-native';
 import { useStudents } from './StudentContext';
 
 const HomeScreen = ({ navigation }) => {
+  // Se utiliza el hook useStudents para obtener y establecer la lista de estudiantes.
   const { students, setStudents } = useStudents();
+
+  // Se definen los estados para cada campo del formulario de estudiante.
   const [matricula, setMatricula] = useState('');
   const [nombre, setNombre] = useState('');
   const [apellidos, setApellidos] = useState('');
   const [grado, setGrado] = useState('');
   const [promedio, setPromedio] = useState('');
 
+  // Función para manejar el guardado de un estudiante.
   const handleSave = () => {
+    // Si alguno de los campos está vacío, se muestra una alerta.
     if (!matricula || !nombre || !apellidos || !grado || !promedio) {
       Alert.alert(
         "Campos vacíos",
@@ -19,13 +24,18 @@ const HomeScreen = ({ navigation }) => {
         { cancelable: false }
       );
     } else {
+      // Si todos los campos están llenos, se crea un nuevo estudiante y se añade a la lista.
       const newStudent = { matricula, nombre, apellidos, grado, promedio };
       setStudents([...students, newStudent]);
+
+      // Se limpian los campos del formulario.
       setMatricula('');
       setNombre('');
       setApellidos('');
       setGrado('');
       setPromedio('');
+
+      // Se muestra una alerta indicando que el estudiante ha sido guardado exitosamente.
       Alert.alert(
         "Guardado exitosamente",
         "El estudiante ha sido guardado.",
@@ -34,8 +44,8 @@ const HomeScreen = ({ navigation }) => {
       );
     }
   };
-  
 
+  // Se retorna el componente de la pantalla de inicio.
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
