@@ -1,5 +1,7 @@
-// Importa las funciones necesarias de la biblioteca React.
 import React, { createContext, useState, useContext } from "react";
+//El estado es un valor que el componente puede mantener, cambiar 
+//y usar para renderizar su interfaz de usuario. 
+
 
 // Crea un Contexto para los Estudiantes. Este será el medio por el cual los componentes de React podrán acceder y manipular el estado de los estudiantes.
 const StudentContext = createContext();
