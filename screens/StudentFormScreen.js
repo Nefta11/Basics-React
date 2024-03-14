@@ -43,10 +43,6 @@ const StudentFormScreen = ({ navigation }) => {
     </View>
   );
 };
-
-// ... tus estilos y exportación del componente
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

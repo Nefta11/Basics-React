@@ -34,8 +34,6 @@ const EditScreen = ({ route, navigation }) => {
     navigation.goBack();
   };
 
-
-
   return (
     <View style={styles.container}>
       <TextInput
