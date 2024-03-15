@@ -11,10 +11,10 @@ export const StudentProvider = ({ children }) => {
   const [students, setStudents] = useState([]);
 
   // Retorna el Proveedor del Contexto de Estudiantes. Este proveedor tiene un valor que es un objeto con el estado de los estudiantes y la función para actualizar ese estado.
-  return (
+  return (  
     <StudentContext.Provider value={{ students, setStudents }}>
       {children}
-    </StudentContext.Provider> // Renderiza los componentes hijos dentro del Proveedor del Contexto de Estudiantes. Estos componentes hijos serán capaces de acceder al estado de los estudiantes.
+    </StudentContext.Provider>
   );
 };
 
