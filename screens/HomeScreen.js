@@ -11,7 +11,6 @@ const HomeScreen = ({ navigation }) => {
   const [grado, setGrado] = useState('');
   const [promedio, setPromedio] = useState('');
 
-  // Función para manejar el guardado de un estudiante.
   const handleSave = () => {
     // Si alguno de los campos está vacío, se muestra una alerta.
     if (!matricula || !nombre || !apellidos || !grado || !promedio) {
