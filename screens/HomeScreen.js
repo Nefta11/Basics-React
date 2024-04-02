@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
   const [promedio, setPromedio] = useState('');
 
   const handleSave = () => {
-    // Si alguno de los campos está vacío, se muestra una alerta.
+
     if (!matricula || !nombre || !apellidos || !grado || !promedio) {
       Alert.alert(
         "Campos vacíos",
