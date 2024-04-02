@@ -3,9 +3,8 @@ import { View, Text, TextInput, Button, StyleSheet,Alert } from 'react-native';
 import { useStudents } from './StudentContext';
 
 const HomeScreen = ({ navigation }) => {
-  // Se utiliza el hook useStudents para obtener y establecer la lista de estudiantes.
+
   const { students, setStudents } = useStudents();
-  // Se definen los estados para cada campo del formulario de estudiante.
   const [matricula, setMatricula] = useState('');
   const [nombre, setNombre] = useState('');
   const [apellidos, setApellidos] = useState('');
