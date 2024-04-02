@@ -31,7 +31,6 @@ const HomeScreen = ({ navigation }) => {
       setGrado('');
       setPromedio('');
 
-      // Se muestra una alerta indicando que el estudiante ha sido guardado exitosamente.
       Alert.alert(
         "Guardado exitosamente",
         "El estudiante ha sido guardado.",
