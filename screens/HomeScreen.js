@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation }) => {
         { cancelable: false }
       );
     } else {
-      // Si todos los campos están llenos, se crea un nuevo estudiante y se añade a la lista.
+
       const newStudent = { matricula, nombre, apellidos, grado, promedio };
       setStudents([...students, newStudent]);
 
