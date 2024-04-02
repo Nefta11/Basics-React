@@ -40,7 +40,6 @@ const HomeScreen = ({ navigation }) => {
     }
   };
 
-  // Se retorna el componente de la pantalla de inicio.
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
