@@ -25,7 +25,6 @@ const HomeScreen = ({ navigation }) => {
       const newStudent = { matricula, nombre, apellidos, grado, promedio };
       setStudents([...students, newStudent]);
 
-      // Se limpian los campos del formulario.
       setMatricula('');
       setNombre('');
       setApellidos('');
